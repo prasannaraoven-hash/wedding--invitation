@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia, serif;
+}
+
+body{
+background:linear-gradient(135deg,#fff5ec,#ffe4d6);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.envelope{
+width:320px;
+height:220px;
+background:#d89b6b;
+position:relative;
+cursor:pointer;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+overflow:hidden;
+}
+
+.flap{
+position:absolute;
+width:100%;
+height:100%;
+background:#c47a4d;
+clip-path:polygon(0 0,100% 0,50% 55%);
+transition:.8s;
+transform-origin:top;
+}
+
+.card{
+position:absolute;
+left:10px;
+top:20px;
+width:300px;
+height:180px;
+background:white;
+border-radius:8px;
+padding:20px;
+text-align:center;
+transform:translateY(120%);
+transition:1s;
+}
+
+h1{
+color:#b76e79;
+margin-bottom:10px;
+}
+
+button{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+background:#b76e79;
+color:white;
+border-radius:20px;
+cursor:pointer;
+}
+
+.open .flap{
+transform:rotateX(180deg);
+}
+
+.open .card{
+transform:translateY(0);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="envelope" id="env">
+
+<div class="flap"></div>
+
+<div class="card">
+<h1>Ravi ❤️ Prasanna</h1>
+
+<p>You are cordially invited to our Wedding</p>
+
+<br>
+
+<b>10 December 2027</b>
+
+<br><br>
+
+<p>Venue: Vijayawada</p>
+
+<button onclick="alert('Thank You ❤️')">
+RSVP
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const env=document.getElementById("env");
+
+env.onclick=function(){
+env.classList.toggle("open");
+}
+
+</script>
+
+</body>
+</html>
